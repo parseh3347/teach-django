@@ -6,7 +6,12 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument('name' , type=str ,help='specifi name')
 
-    def handle(self, *args,  **kwargs):
+    def handle(self, *args, **kwargs):
         name=kwargs['name']
-        greeting = f'hi {name} how are you'
-        self.stdout.write(greeting)
+        greeting = f'hi {name} how are you' 
+        self.stdout.write(self.style.SUCCESS(greeting))
+
+
+
+
+

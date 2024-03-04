@@ -1,3 +1,10 @@
 from django.contrib import admin
+from dataentry.models import Student
 
-# Register your models here.
+@admin.register(Student)
+class StudentAdmin(admin.ModelAdmin):
+    list_display = [
+        'code',
+        'username',
+        'email',
+    ]
